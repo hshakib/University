@@ -1,0 +1,79 @@
+@model Instructor
+
+<br>
+<form action="/saveInstructor" method="post" class="well">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>First Name:</label>
+                <input type="text" name="FName" placeholder="First Name" class="form-control"/>
+                <span asp-validation-for="FName"></span>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>Last Name:</label>
+                <input type="text" name="LName" placeholder="Last Name..." class="form-control"/>
+                <span asp-validation-for="LName"></span>
+            </div>  
+        </div>        
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>Gender:</label>
+                <input type="text" name="Gender" placeholder="Gender" class="form-control"/>
+                <span asp-validation-for="Gender"></span>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>Age:</label>
+                <input type="text" name="Age" placeholder="Age..." class="form-control"/>
+                <span asp-validation-for="Age"></span>
+            </div>  
+        </div>        
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>Instrucotr Rank:</label>
+                <input type="text" name="Rank" placeholder="Rank" class="form-control"/>
+                <span asp-validation-for="Rank"></span>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>Profession:</label>
+                <input type="text" name="Profession" placeholder="Profession..." class="form-control"/>
+                <span asp-validation-for="Profession"></span>
+            </div>  
+        </div>        
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>Salary:</label>
+                <input type="text" name="Salary" placeholder="Salary" class="form-control"/>
+                <span asp-validation-for="Salary"></span>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="text" name="Email" placeholder="Email..." class="form-control"/>
+                <span asp-validation-for="Email"></span>
+            </div>  
+        </div>        
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label>Phone:</label>
+                <input type="text" name="Phone" placeholder="Phone..." class="form-control"/>
+                <span asp-validation-for="Phone"></span>
+            </div>  
+        </div>        
+    </div>
+    <input type="submit" class="btn btn-primary" value="Save" />
+</form> 

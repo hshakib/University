@@ -1,0 +1,67 @@
+@model Universities
+
+
+<form action="/AddUniversity" method="post" class="well col-sm-12">
+    <div class="col-sm-12">
+        <div class="row">
+            <div class="col-sm-12 well">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label>University Name:</label>
+                        <input type="text" name="Name" placeholder="University Name" class="form-control"/>
+                        <span asp-validation-for="Name"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Location:</label>
+                        <input type="text" name="Location" placeholder="Location..." class="form-control"/>
+                        <span asp-validation-for="Location"></span>
+                    </div>  
+                    <input type="submit" class="btn btn-primary" value="Save" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="well">
+                <table class="table">
+                    <tr>
+                        <th>University Name</th>
+                        <th>University Location</th>
+                    </tr>
+                    @foreach (var un in ViewBag.Universities)
+                    {
+                        <tr>
+                                <td>@un.Name</td>
+                                <td>@un.Location</td>
+                                <td>
+                                    <a class="btn btn-danger btn-sm" href="RemoverUniversity/@un.UniversityId">Delete</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-primary btn-sm" href="EditU/@un.UniversityId">Edit</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-primary btn-sm" href="EditU/@un.UniversityId">Faculties</a>
+                                </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group">
+                    @foreach (var un in ViewBag.Universities)
+                    {
+                    <div style="background-color: lightblue" class="col-sm-12 well">                            
+                        <h6>@un.Name</h6>
+                        <h6>@un.Location</h6>
+                        <a class="btn btn-danger" href="RemoverUniversity/@un.UniversityId">Delete</a>
+                        <a class="btn btn-primary" href="EditU/@un.UniversityId">Edit</a>
+                    </div>
+                    }
+                </div>
+            </div>         
+        </div> -->
+    </div>
+</form> 
+
+

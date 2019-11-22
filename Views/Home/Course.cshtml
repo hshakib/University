@@ -1,0 +1,53 @@
+@model Course
+
+<br>
+<form action="/saveCourse" method="post" class="well">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>Course Title:</label>
+                <input type="text" name="Title" placeholder="Course Title" class="form-control"/>
+                <span asp-validation-for="Title"></span>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>Course Hourse:</label>
+                <input type="text" name="CrHourse" placeholder="Course Hours..." class="form-control"/>
+                <span asp-validation-for="CrHourse"></span>
+            </div>  
+        </div>        
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label>Description:</label>
+                <input type="text" name="Description" placeholder="Description..." class="form-control"/>
+                <span asp-validation-for="Description"></span>
+            </div>  
+        </div>        
+    </div>
+    <div class="col-sm-12">
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Save" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                @foreach(var cor in ViewBag.Course)
+                {
+                    <div class="well">                        
+                        <h4>@cor.Title</h4>
+                        <h4>@cor.CrHourse</h4>
+                        <h4>@cor.Description</h4>
+                        <a href="/UpdateCourse/{@cor.CourseId}" class="btn btn-success">Update</a>
+                    </div>
+                }
+            </div>  
+        </div>        
+    </div>
+
+
+    
+</form> 

@@ -1,0 +1,38 @@
+@model Faculty
+
+<br>
+<form action="/saveFaculty" method="post" class="well">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>Faculty Name:</label>
+                <input type="text" name="Name" placeholder="University Name" class="form-control"/>
+                <span asp-validation-for="Name"></span>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>Description:</label>
+                <input type="text" name="Description" placeholder="Description..." class="form-control"/>
+                <span asp-validation-for="Description"></span>
+            </div>  
+        </div>        
+    </div>
+    <div> 
+        <input type="submit" class="btn btn-primary" value="Save" />
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                @foreach (var un in ViewBag.Faculty)
+                {
+                <div class="col-sm-3 well">
+                    <h6>@un.Name</h6>
+                    <h6>@un.Description</h6>
+                </div>
+                }
+            </div>  
+        </div>        
+    </div>
+</form> 
